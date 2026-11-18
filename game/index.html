@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLBAY HEAT — an open-world crime game</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<canvas id="game" aria-label="SOLBAY HEAT: explore the city of Solbay on foot or by car"></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="vignette"></div>
+<div id="crosshair">+</div>
+
+<div id="hud" style="display:none">
+  <div id="topbar">
+    <div id="objective"></div>
+    <div id="timer" style="display:none"></div>
+  </div>
+  <div id="stars"></div>
+  <div id="moneybox">
+    <div id="money">$0</div>
+    <div id="healthbar"><div id="health-fill"></div><span id="health-text">100</span></div>
+    <div id="ammo"></div>
+  </div>
+  <div id="speed"></div>
+  <div id="district" style="display:none"></div>
+  <div id="subtitle" style="display:none"><span id="speaker"></span><span id="subtext"></span></div>
+  <div id="prompt" style="display:none"></div>
+  <div id="cash-flash" style="display:none"></div>
+  <canvas id="minimap" width="180" height="180"></canvas>
+</div>
+
+<div id="title-screen" class="screen">
+  <div class="panel">
+    <h1>SOLBAY <span>HEAT</span></h1>
+    <p class="tagline">A sun-soaked coastal city. Any car. Five stars of trouble.</p>
+    <button id="btn-new">New Game</button>
+    <button id="btn-continue">Continue</button>
+    <button id="btn-how">How to play</button>
+    <div id="howto" style="display:none">
+      <p><b>WASD</b> move / drive &nbsp;·&nbsp; <b>Mouse</b> look (click to lock) &nbsp;·&nbsp; <b>E</b> enter car / talk / jobs</p>
+      <p><b>Click</b> shoot &nbsp;·&nbsp; <b>F</b> punch &nbsp;·&nbsp; <b>R</b> reload &nbsp;·&nbsp; <b>Shift</b> sprint / boost</p>
+      <p><b>Space</b> jump / handbrake &nbsp;·&nbsp; <b>C</b> camera &nbsp;·&nbsp; <b>P</b> pause &nbsp;·&nbsp; <b>M</b> mute</p>
+      <p>Steal cars, run missions for Marisol and Piper, take fares and parcels — and mind the Solbay PD.</p>
+    </div>
+    <p class="fine">An original game. Solbay, Reno Vale, Marisol Cruz, Piper Lang and the Corsairs are invented here — no assets, names or music from any commercial game.</p>
+  </div>
+</div>
+
+<div id="pause-screen" class="screen" style="display:none">
+  <div class="panel">
+    <h2>Paused</h2>
+    <button id="btn-resume">Resume</button>
+    <button id="btn-quit">Save &amp; Quit to Title</button>
+  </div>
+</div>
+
+<div id="busted-screen" class="screen" style="display:none">
+  <div class="panel">
+    <h2 class="busted">BUSTED</h2>
+    <p id="busted-fine"></p>
+    <button id="btn-busted">Walk out of the station</button>
+  </div>
+</div>
+
+<div id="wasted-screen" class="screen" style="display:none">
+  <div class="panel">
+    <h2 class="busted">WASTED</h2>
+    <p id="wasted-fee"></p>
+    <button id="btn-wasted">Leave the hospital</button>
+  </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
